@@ -1,6 +1,6 @@
-# Svelte Duotone Image
+# Svelte Multitone Image
 
-A simple image renderer to apply duotone effects for svelte.
+A simple image renderer to apply multitone effects for svelte.
 
 ## Basic usage
 
