@@ -15,6 +15,10 @@ A simple image renderer to apply multitone effects for svelte.
 
 This is the origin of the image, equivalent of the `src` attribute on an <img> tag.
 
+### alt
+
+The alt text for the generated image.
+
 ### colours
 
 An array of hex colours, the component will automatically parse both short and long hexcodes.
