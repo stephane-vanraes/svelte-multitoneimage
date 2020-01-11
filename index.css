@@ -1,31 +1,74 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --primary: #CC3363;
+}
+
+* {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: 'Gelasio', serif;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: #fdfdfd;
-    display: flex;
-    flex-direction: column;
     height: 100vh;
 }
 
-main {
+header {
+    background-color: var(--primary);
+    color: white;
     display: flex;
-    flex-direction: row;
-    flex-grow: 1;
     flex-wrap: wrap;
-    padding: 0 32px;
-}
-
-h1 {
     padding: 1rem;
 }
+    header > h1 {
+        flex-grow: 999;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
 
-.controls {
-    flex-grow: 1;
-    padding: 32px 0;
-    width: 200px;
+main {
+    padding: 1rem 2rem;
 }
 
-.image {
-    flex-grow: 999;
-    min-width: 75%;
+p {
+    display: block;
+    margin: 0 1rem;
+}
+
+.sample {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+figure {
+    flex: 1 1;
+    min-width: 300px;
+    padding: 1rem;
+}
+img {
+    width: 100%;
+}
+figcaption {
+    background-color: #F4F4F4;
+    padding: .5rem;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid var(--primary);
+    color: #666;
+    display: block;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 1rem;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    page-break-inside: avoid;
+    word-wrap: break-word;
 }

@@ -1,45 +1,34 @@
 <script>
-    import MultitoneImage from '../index.svelte';
-
-    const src = "image.jpg";
-    let colours = ["#478abd", "#de45db"];
-    let exponent = 1;
-    let amplitude = 1;
-
-    const remove = (index) => colours = colours.filter((c, i) => i != index);
-    const add = () => colours = [...colours, "#757575"];
-
+import MultitoneImage from '../index.svelte';
 </script>
 
-<h1>Svelte Multione Image</h1>
+<header>
+    <h1>Svelte Multitone Image</h1>
+    <a href="https://github.com/stephane-vanraes/svelte-multitoneimage">Github</a>
+</header>
+
 <main>
-    <div class="controls">
-        {#each colours as colour, index}
-            <li>
-                <label>
-                    <input type="color" bind:value={colour}>
-                    <span>{colour}</span>
-                </label>
-                <button
-                    type="button"
-                    disabled="{colours.length <= 2}"
-                    on:click="{() => remove(index)}">
-                    <span>Remove</span>
-                </button>
-            </li>
-        {/each}
-        <button on:click="{add}">Add</button>
-        <hr />
-        <label>
-            <input type="range" min="0" max="5" step=".1" bind:value={exponent}>
-            <span>Exponent</span>
-        </label>
-        <label>
-            <input type="range" min="0" max="5" step=".1" bind:value={amplitude}>
-            <span>Amplitude</span>
-        </label>
+    <p>A simple image renderer to apply multitone effects for svelte.</p>
+    <div class="sample">
+        <figure>
+            <img src="./assets/image.jpg" alt="">
+            <figcaption>The original image</figcaption>
+        </figure>
+        <figure>
+            <MultitoneImage
+                src="./assets/image.jpg"
+                colours="{['#ff00ff', '#ffff00']}"
+                alt="processed image"
+                exponent="1.3"
+                amplitude="1.1"
+            />
+            <figcaption>The processed image</figcaption>
+        </figure>
     </div>
-    <div class="image">
-        <MultitoneImage {src} {colours} {exponent} {amplitude} />
-    </div>
+    <pre>&lt;MultitoneImage
+        src="./assets/image.jpg"
+        alt="processed image"
+        colours="&#123;['#ff00ff', '#ffff00']&#125;"
+        amplitude="1.3"
+        exponent="1.1" /&gt;</pre>
 </main>
