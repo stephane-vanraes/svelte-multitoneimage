@@ -29,6 +29,22 @@ import MultitoneImage from '../index.svelte';
         src="./assets/image.jpg"
         alt="processed image"
         colours="&#123;['#ff00ff', '#ffff00']&#125;"
-        amplitude="1.3"
-        exponent="1.1" /&gt;</pre>
+        amplitude="1.1"
+        exponent="1.3" /&gt;</pre>
+    <div class="sample">
+        <figure>
+            <MultitoneImage
+                src="./assets/image.jpg"
+                colours="{['#000', '#7a4285', '#07d4f2']}"
+                alt="processed image"
+                exponent="2.0"
+                amplitude="1.9"
+            />
+            <figcaption>The colour array can have more than one colour.</figcaption>
+        </figure>
+        <figure>
+            <MultitoneImage src="./assets/image.jpg"/>
+            <figcaption>Default values will generate a grayscale image.</figcaption>
+        </figure>
+    </div>
 </main>
