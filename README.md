@@ -1,13 +1,13 @@
 # Svelte Multitone Image
 
 A simple image renderer to apply multitone effects for svelte.
+[Demo page](https://stephane-vanraes.github.io/svelte-multitoneimage/)
 
 ## Basic usage
 
 ```html
 <MultitoneImage src={imageSource} colours={colorArray} />
 ```
-
 
 ## Props
 
