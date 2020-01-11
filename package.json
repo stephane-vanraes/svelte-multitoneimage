@@ -2,15 +2,28 @@
   "name": "svelte-multitoneimage",
   "version": "1.0.1",
   "author": "Stephane Vanraes",
+  "repository": {
+    "url": "https://github.com/stephane-vanraes/svelte-multitoneimage"
+  },
+  "svelte": "src/index.svelte",
+  "module": "index.mjs",
+  "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "rollup": "^1.11.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-svelte": "^5.0.0",
-    "rollup-plugin-terser": "^5.2.0",
     "svelte": "^3.0.0"
-  }
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "src",
+    "index.mjs",
+    "index.js"
+  ]
 }
