@@ -1,9 +1,9 @@
 {
   "name": "svelte-multitoneimage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Stephane Vanraes",
   "repository": {
-    "url": "https://github.com/stephane-vanraes/svelte-duotoneimage"
+    "url": "https://github.com/stephane-vanraes/svelte-multitoneimage"
   },
   "svelte": "src/index.svelte",
   "module": "index.mjs",
