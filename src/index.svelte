@@ -6,7 +6,10 @@
     export let exponent = 1;
 
     // Creates a rough hash to ensure unique id's
-    let id = src.split('').reduce((a,b) => (((a << 5) - a) + b.charCodeAt(0))|0, 0);
+    let id = [src, ...colours]
+        .join()
+        .split('')
+        .reduce((a,b) => (((a << 5) - a) + b.charCodeAt(0))|0, 0);
 
     // Maps the hex code to rgb, extracts the desired channel and converts it to a decimal value
     $: getChannel = (channel) => colours.map(hex => {
