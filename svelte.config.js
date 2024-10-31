@@ -12,7 +12,7 @@ const config = {
 		paths: {
 			base: process.argv.includes('dev')
 				? ''
-				: 'https://stephane-vanraes.github.io/svelte-multitoneimage/'
+				: 'https://stephane-vanraes.github.io/svelte-multitoneimage'
 		}
 	}
 };
