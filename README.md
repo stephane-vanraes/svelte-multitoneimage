@@ -1,58 +1,35 @@
-# create-svelte
+# Svelte Multitone Image
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A simple image renderer to apply multitone effects for svelte.
+[Demo page](https://stephane-vanraes.github.io/svelte-multitoneimage/)
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Basic usage
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```html
+<MultitoneImage src="{imageSource}" colors="{colorArray}" />
 ```
 
-## Developing
+## Props
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### src
 
-```bash
-npm run dev
+This is the origin of the image, equivalent of the `src` attribute on an <img> tag.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+### alt
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+The alt text for the generated image.
 
-## Building
+### colors
 
-To build your library:
+An array of hex colors, the component will automatically parse both short and long hexcodes.
+Defaults to `['#000', '#fff']` resulting in a grayscale image.
 
-```bash
-npm run package
-```
+### exponent and amplitude
 
-To create a production version of your showcase app:
+As a final step in the filter a gamma correction is passed on each channel, this correction is of the form:
 
-```bash
-npm run build
-```
+`gamma = amplitude * pow(channel, exponent) + offset`
 
-You can preview the production build with `npm run preview`.
+This gamma correction enhances the overall contrast in the image. A higher exponent will make the dark areas darker, while a higher amplitude brightens the lighter areas.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+_The offset in this component will always be 0._
