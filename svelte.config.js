@@ -10,9 +10,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('dev')
-				? ''
-				: 'https://stephane-vanraes.github.io/svelte-multitoneimage'
+			base: process.argv.includes('dev') ? '' : '/svelte-multitoneimage'
 		}
 	}
 };
