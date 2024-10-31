@@ -4,7 +4,14 @@
 </script>
 
 <main>
-	<h2>A simple image renderer to apply multitone effects for svelte.</h2>
+	<h1>A simple image renderer to apply multitone effects for svelte.</h1>
+	<pre>&lt;MultitoneImage
+    src={sample}
+    alt="processed image"
+    colors="&#123;['#ff00ff', '#ffff00']&#125;"
+    amplitude={1.1}
+    exponent={1.3} /&gt;</pre>
+	<p>See the <a href="/docs">Docs</a> for more information</p>
 	<figure>
 		<img src={sample} alt="" />
 		<figcaption>The original image</figcaption>
@@ -19,12 +26,7 @@
 		/>
 		<figcaption>The processed image</figcaption>
 	</figure>
-	<pre>&lt;MultitoneImage
-  src={sample}
-  alt="processed image"
-  colors="&#123;['#ff00ff', '#ffff00']&#125;"
-  amplitude={1.1}
-  exponent={1.3} /&gt;</pre>
+
 	<figure>
 		<MultitoneImage
 			src={sample}
@@ -49,7 +51,8 @@
 		grid-template-columns: 1fr 1fr;
 		padding: 1rem 2rem;
 
-		> h2 {
+		> h1,
+		> p {
 			grid-column: 1 / -1;
 		}
 		> pre {

@@ -1,5 +1,6 @@
 :root {
 	--primary: #cc3363;
+	--secondary: #33cc9c;
 }
 
 * {
@@ -11,9 +12,25 @@
 }
 
 body {
-	height: 100vh;
+	height: 100dvh;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		background-color: var(--primary);
+		width: 0.5rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--secondary);
+	}
 }
 
+h1 {
+	text-decoration: underline;
+	text-decoration-color: var(--secondary);
+	text-decoration-thickness: 4px;
+	text-underline-offset: 4px;
+}
 img {
 	display: block;
 	inline-size: 100%;
