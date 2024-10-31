@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import MultitoneImage from '$lib/MultitoneImage.svelte';
 	import sample from '$lib/assets/image.jpg';
 </script>
@@ -11,7 +12,7 @@
     colors="&#123;['#ff00ff', '#ffff00']&#125;"
     amplitude={1.1}
     exponent={1.3} /&gt;</pre>
-	<p>See the <a href="/docs">Docs</a> for more information</p>
+	<p>See the <a href="{base}/docs">Docs</a> for more information</p>
 	<figure>
 		<img src={sample} alt="" />
 		<figcaption>The original image</figcaption>

@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import sample from '$lib/assets/image.jpg';
 	import MultitoneImage from '$lib/MultitoneImage.svelte';
 </script>
@@ -30,7 +31,7 @@
 	<div class="sample">
 		<MultitoneImage alt="Sibiu" src={sample} colors={['#123', '#def']} amplitude={1} exponent={1} />
 	</div>
-	<p>Check the <a href="/demo">Demo Page</a> for an interactive demo</p>
+	<p>Check the <a href="{base}/demo">Demo Page</a> for an interactive demo</p>
 </main>
 
 <style>

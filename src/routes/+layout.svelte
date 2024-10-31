@@ -1,12 +1,13 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import '../index.css';
 
 	const { children } = $props();
 </script>
 
-{#snippet link(href, text)}
-	<a {href} aria-current={$page.route.id == href ? 'page' : undefined}>{text}</a>
+{#snippet link(href: string, text: string)}
+	<a href="{base}{href}" aria-current={$page.route.id == href ? 'page' : undefined}>{text}</a>
 {/snippet}
 
 <header>
