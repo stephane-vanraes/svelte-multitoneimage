@@ -1,28 +1,18 @@
 <script lang="ts">
-	type Props = {
-		src: string;
-		alt: string;
-		colours: string[];
-		amplitude: number;
-		exponent: number;
-	};
+	import type { HTMLImgAttributes } from 'svelte/elements';
+	import { getChannel } from './utils.js';
 
-	const { src, alt, colours = ['#000', '#fff'], amplitude, exponent }: Props = $props();
+	interface Props extends HTMLImgAttributes {
+		colors?: string[];
+		amplitude?: number;
+		exponent?: number;
+	}
+
+	const { colors = ['#000', '#fff'], amplitude = 1, exponent = 1, ...rest }: Props = $props();
 
 	const id = crypto.randomUUID();
 
-	// Maps the hex code to rgb, extracts the desired channel and converts it to a decimal value
-	const getChannel = (channel: 'r' | 'g' | 'b') =>
-		colours
-			.map((hex) => {
-				const [r, g, b] = hex
-					.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
-					?.substring(1)
-					?.match(/.{2}/g)
-					?.map((x) => parseInt(x, 16)) ?? [0, 0, 0];
-				return { r, g, b }[channel] / 255;
-			})
-			.join(' ');
+	const getValues = $derived(getChannel(colors));
 </script>
 
 <svg viewBox="0 0 1 1">
@@ -36,9 +26,9 @@
 		>
 		</feColorMatrix>
 		<feComponentTransfer color-interpolation-filters="sRGB">
-			<feFuncR type="table" tableValues={getChannel('r')}></feFuncR>
-			<feFuncG type="table" tableValues={getChannel('g')}></feFuncG>
-			<feFuncB type="table" tableValues={getChannel('b')}></feFuncB>
+			<feFuncR type="table" tableValues={getValues('r')}></feFuncR>
+			<feFuncG type="table" tableValues={getValues('g')}></feFuncG>
+			<feFuncB type="table" tableValues={getValues('b')}></feFuncB>
 		</feComponentTransfer>
 		<feComponentTransfer color-interpolation-filters="sRGB">
 			<feFuncR type="gamma" {exponent} {amplitude} offset="0"></feFuncR>
@@ -48,7 +38,7 @@
 	</filter>
 </svg>
 
-<img {src} {alt} style="filter: url(#duotone-{id});" />
+<img style="filter: url(#duotone-{id});" {...rest} />
 
 <style>
 	img {

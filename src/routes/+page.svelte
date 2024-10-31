@@ -12,26 +12,26 @@
 	<figure>
 		<MultitoneImage
 			src={sample}
-			colours={['#ff00ff', '#ffff00']}
+			colors={['#ff00ff', '#ffff00']}
 			alt="processed image"
-			exponent="1.3"
-			amplitude="1.1"
+			exponent={1.3}
+			amplitude={1.1}
 		/>
 		<figcaption>The processed image</figcaption>
 	</figure>
 	<pre>&lt;MultitoneImage
-          src={sample}
-          alt="processed image"
-          colours="&#123;['#ff00ff', '#ffff00']&#125;"
-          amplitude="1.1"
-          exponent="1.3" /&gt;</pre>
+  src={sample}
+  alt="processed image"
+  colors="&#123;['#ff00ff', '#ffff00']&#125;"
+  amplitude={1.1}
+  exponent={1.3} /&gt;</pre>
 	<figure>
 		<MultitoneImage
 			src={sample}
-			colours={['#000', '#7a4285', '#07d4f2']}
+			colors={['#000', '#7a4285', '#07d4f2']}
 			alt="processed image"
-			exponent="2.0"
-			amplitude="1.9"
+			exponent={2.0}
+			amplitude={1.9}
 		/>
 		<figcaption>The colour array can have more than one colour.</figcaption>
 	</figure>
