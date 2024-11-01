@@ -1,7 +1,8 @@
 {
 	"name": "svelte-multitoneimage",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"author": "Stephane Vanraes",
+	"license": "MIT",
 	"homepage": "https://stephane-vanraes.github.io/svelte-multitoneimage",
 	"repository": {
 		"url": "https://github.com/stephane-vanraes/svelte-multitoneimage"
