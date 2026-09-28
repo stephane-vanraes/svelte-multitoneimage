@@ -27,7 +27,6 @@
 		/>
 		<figcaption>The processed image</figcaption>
 	</figure>
-
 	<figure>
 		<MultitoneImage
 			src={sample}
@@ -50,7 +49,6 @@
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: 1fr 1fr;
-		padding: 1rem 2rem;
 
 		> h1,
 		> p {

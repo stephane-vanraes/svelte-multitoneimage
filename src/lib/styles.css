@@ -33,6 +33,12 @@ body {
 	}
 }
 
+	main {
+    margin-block-start: 1rem;
+    margin-inline: auto;
+    max-inline-size: 120ch;
+	}
+
 h1 {
 	text-decoration: underline;
 	text-decoration-color: var(--secondary);

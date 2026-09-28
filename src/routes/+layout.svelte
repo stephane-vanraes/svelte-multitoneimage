@@ -10,28 +10,34 @@
 	<a href={resolve(href)} aria-current={page.route.id == href ? 'page' : undefined}>{text}</a>
 {/snippet}
 
-<header>
-	<h1>Svelte Multitone Image</h1>
-	{@render link('/', 'Home')}
-	{@render link('/docs', 'Docs')}
-	{@render link('/demo', 'Demo')}
-	<a href="https://github.com/stephane-vanraes/svelte-multitoneimage" target="_blank">Github</a>
-</header>
+<div class="header">
+  <header>
+    <h1>Svelte Multitone Image</h1>
+    {@render link('/', 'Home')}
+    {@render link('/docs', 'Docs')}
+    {@render link('/demo', 'Demo')}
+    <a href="https://github.com/stephane-vanraes/svelte-multitoneimage" target="_blank">Github</a>
+  </header>
+</div>
 
 <div>
 	{@render children()}
 </div>
 
 <style>
-	header {
-		align-items: center;
+.header {
 		background-color: var(--primary);
 		box-shadow: 0px 8px 8px var(--secondary);
+
+}
+	header {
+		align-items: center;
 		color: white;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-		padding: 1rem;
+    margin-inline: auto;
+    max-inline-size: 120ch;
 
 		> h1 {
 			flex-grow: 999;

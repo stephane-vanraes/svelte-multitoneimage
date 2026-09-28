@@ -38,8 +38,6 @@
 	main {
 		display: grid;
 		gap: 1rem;
-		margin: 0 auto 2rem;
-		max-inline-size: 144ch;
 		padding: 0 0.5rem;
 	}
 

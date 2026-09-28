@@ -41,6 +41,7 @@
 	let selected_colors = $derived(colors.filter((c) => c.selected).map((c) => c.value));
 </script>
 
+<main>
 <h1>Demo</h1>
 <div class="controls">
 	<label>
@@ -70,6 +71,8 @@
 {:else}
 	<MultitoneImage alt="" src={sample} {exponent} colors={selected_colors} {amplitude} />
 {/if}
+
+</main>
 
 <style>
 	.controls {
