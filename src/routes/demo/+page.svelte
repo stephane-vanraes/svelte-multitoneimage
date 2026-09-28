@@ -56,7 +56,7 @@
 	<div class="colours">
 		<span>Colours</span>
 		<div>
-			{#each colors as color}
+			{#each colors as color (color)}
 				<label class="colour" style="--clr: {color.value}">
 					<input type="checkbox" bind:checked={color.selected} />
 				</label>
